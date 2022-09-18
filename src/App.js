@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import FullName from './profile/FullName';
+import Bio from './profile/Bio';
+import Profession from './profile/Profession';
+import ma from './ma.jpg'
 
 function App() {
+  const handleEvent = (name) => {
+    alert(name);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div>
+    <h1>Self-Profile </h1>
+      <FullName firstName="Mariem" lastName="Belhadj" name={handleEvent}/>
+      <br/>
+      <div>
+      <Bio  age="21"  leisure={" Playing Violin, Watching TV , Eating and Sleeping"}>
+        <img src={ma} style={{width:'100px', height:'100px'}}/>
+        </Bio>
+      </div>
+      <br/>
+      <div><Profession/></div>
+      
     </div>
+    
+    </>
   );
 }
-
 export default App;
